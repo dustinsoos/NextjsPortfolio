@@ -13,7 +13,7 @@ export default function IntroText() {
         transition={{ duration: 0.8 }}
         className=' flex flex-col gap-10 md:gap-4 min-h-screen md:flex-row justify-center items-center '
       >
-        <div className='sm: w-full md:w-3/5 flex flex-col gap-4'>
+        <div className='sm:w-full md:w-3/5 flex flex-col gap-4'>
           <h1 className='text-6xl'>
             Yo, I'm <span className=' text-green-400'>Dustin.</span>
           </h1>
@@ -23,7 +23,7 @@ export default function IntroText() {
             improve, not only related to coding but as a person in general.
           </p>
         </div>
-        <div className='hidden w-2/5 sm:block '>
+        <div className='hidden w-2/5 md:block '>
           <Image
             src={ProfileImg}
             alt='Profile-Image'
