@@ -24,13 +24,13 @@ export default function ExperienceCards() {
   });
   return (
     <motion.div
-      className='pt-8 w-3/4'
+      className='w-full pt-8 md:w-3/4'
       variants={variants}
       initial='hidden'
       animate={inView ? 'show' : 'hidden'}
       ref={ref}
     >
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-20'>
         {experienceData.map((experience) => (
           <motion.div
             key={experience.title}

@@ -8,22 +8,22 @@ export default function IntroText() {
   return (
     <>
       <motion.div
-        initial={{ x: '-100vw', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-        className='text-center flex flex-col gap-10 md:text-left md:gap-4 min-h-screen md:flex-row justify-center items-center '
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className=' flex flex-col gap-10 md:gap-4 min-h-screen md:flex-row justify-center items-center '
       >
-        <div className='w-3/5 flex flex-col gap-4'>
-          <h1 className='text-4xl md:text-6xl'>
+        <div className='sm: w-full md:w-3/5 flex flex-col gap-4'>
+          <h1 className='text-6xl'>
             Yo, I'm <span className=' text-green-400'>Dustin.</span>
           </h1>
-          <p className='text-lg md:text-xl'>
+          <p className='text-xl'>
             A Frontend Engineer putting all my time and efforts into becoming
             the best programmer I can be. I'm always wanting to learn and
             improve, not only related to coding but as a person in general.
           </p>
         </div>
-        <div className='w-2/5'>
+        <div className='hidden w-2/5 sm:block '>
           <Image
             src={ProfileImg}
             alt='Profile-Image'
