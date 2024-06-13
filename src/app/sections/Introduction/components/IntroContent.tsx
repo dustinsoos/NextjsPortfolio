@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ProfileImg from '../../../../../public/images/profileimg.jpg';
+import Button from '@/app/components/Button';
 
 export default function IntroText() {
   return (
@@ -22,7 +23,16 @@ export default function IntroText() {
             the best programmer I can be. I'm always wanting to learn and
             improve, not only related to coding but as a person in general.
           </p>
+          <div className='flex gap-4'>
+            <Button className='w-1/3 font-medium' variant='custom-black'>
+              GitHub
+            </Button>
+            <Button className='w-1/3 font-medium' variant='custom-green'>
+              LinkedIn
+            </Button>
+          </div>
         </div>
+        <div></div>
         <div className='hidden w-2/5 md:block '>
           <Image
             src={ProfileImg}

@@ -39,7 +39,7 @@ export default function Navbar() {
         variants={menuVariants}
         initial='closed'
         animate={isOpen ? 'open' : 'closed'}
-        className='absolute top-0 left-0 lg:w-3/5 w-3/4 h-3/5 lg:h-2/5 bg-custom-black p-8 flex flex-col gap-4 items-center justify-center border-2 border-green-400'
+        className='absolute top-0 left-0 w-3/4 h-3/5 lg:w-2/4 lg:h-4/5 bg-custom-black p-8 flex flex-col gap-4 items-center justify-center border-2 border-green-400'
       >
         <button
           onClick={() => setIsOpen(false)}
