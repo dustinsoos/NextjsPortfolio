@@ -8,7 +8,7 @@ export default function Links() {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
           href='#Introduction'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
+          className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           About Me
         </Link>
@@ -16,7 +16,7 @@ export default function Links() {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
           href='#Experience'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
+          className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           Experience
         </Link>
@@ -24,7 +24,7 @@ export default function Links() {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
           href='#MyProjects'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
+          className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           Projects
         </Link>
@@ -32,7 +32,7 @@ export default function Links() {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <a
           href='#TechSkills'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
+          className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           Tech Skills
         </a>
@@ -40,7 +40,7 @@ export default function Links() {
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
           href='#Contact'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
+          className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           Contact
         </Link>
