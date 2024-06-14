@@ -41,9 +41,9 @@ export default function ExperienceCards() {
             }}
           >
             <div className='pb-4'>
-              <h2 className='text-2xl text-green-400'>
+              <h3 className='text-2xl text-green-400'>
                 {experience.company} - {experience.title}
-              </h2>
+              </h3>
               <h3 className='text-xl'></h3>
               <ul className='flex gap-2 flex-wrap'>
                 {experience.technologies.map((tech) => (

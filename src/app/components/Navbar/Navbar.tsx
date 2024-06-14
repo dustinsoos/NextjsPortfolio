@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Links from './Links';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='flex items-center justify-between p-4'>
+    <nav className='flex items-center justify-between py-4'>
       <Link href='/' className='text-4xl text-green-400 hover:opacity-80'>
         DS
       </Link>
@@ -39,7 +40,7 @@ export default function Navbar() {
         variants={menuVariants}
         initial='closed'
         animate={isOpen ? 'open' : 'closed'}
-        className='absolute top-0 left-0 w-3/4 h-3/5 lg:w-2/4 lg:h-4/5 bg-custom-black p-8 flex flex-col gap-4 items-center justify-center border-2 border-green-400'
+        className='absolute top-0 left-0 w-3/4 h-3/5 lg:w-2/4 lg:h-4/5 flex items-center justify-center bg-custom-black border-2 border-green-400'
       >
         <button
           onClick={() => setIsOpen(false)}
@@ -48,36 +49,7 @@ export default function Navbar() {
         >
           &times;
         </button>
-        <Link
-          href='#TechSkills'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
-        >
-          About Me
-        </Link>
-        <Link
-          href='#section2'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
-        >
-          Experience
-        </Link>
-        <Link
-          href='#TechSkills'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
-        >
-          Projects
-        </Link>
-        <Link
-          href='#TechSkills'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
-        >
-          Tech Skills
-        </Link>
-        <Link
-          href='#TechSkills'
-          className='text-gray-300 uppercase font-medium hover:text-green-400 hover:underline'
-        >
-          Contact
-        </Link>
+        <Links />
       </motion.div>
     </nav>
   );

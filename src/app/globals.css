@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2 {
+  color: #4ade80;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 3rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+section {
+  padding-top: 10rem;
+}
+
+h3 {
+  color: #4ade80;
+  font-weight: medium;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}

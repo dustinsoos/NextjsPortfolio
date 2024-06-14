@@ -15,19 +15,19 @@ export default function IntroText() {
         className=' flex flex-col gap-10 md:gap-4 min-h-screen md:flex-row justify-center items-center '
       >
         <div className='sm:w-full md:w-3/5 flex flex-col gap-4'>
-          <h1 className='text-6xl'>
+          <h1 className='text-5xl md:text-6xl'>
             Yo, I'm <span className=' text-green-400'>Dustin.</span>
           </h1>
-          <p className='text-xl'>
+          <p className='text-lg'>
             A Frontend Engineer putting all my time and efforts into becoming
             the best programmer I can be. I'm always wanting to learn and
             improve, not only related to coding but as a person in general.
           </p>
-          <div className='flex gap-4'>
-            <Button className='w-1/3 font-medium' variant='custom-black'>
+          <div className='flex justify-between gap-4'>
+            <Button className='w-full font-medium' variant='custom-black'>
               GitHub
             </Button>
-            <Button className='w-1/3 font-medium' variant='custom-green'>
+            <Button className='w-full font-medium' variant='custom-green'>
               LinkedIn
             </Button>
           </div>
