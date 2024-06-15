@@ -16,11 +16,11 @@ export default function IntroText() {
       >
         <div className='sm:w-full md:w-3/5 flex flex-col gap-4'>
           <h1 className='text-5xl md:text-6xl'>
-            Yo, I'm <span className=' text-green-400'>Dustin.</span>
+            Yo, I&#39;m <span className=' text-green-400'>Dustin.</span>
           </h1>
           <p className='text-lg'>
             A Frontend Engineer putting all my time and efforts into becoming
-            the best programmer I can be. I'm always wanting to learn and
+            the best programmer I can be. I&#39;m always wanting to learn and
             improve, not only related to coding but as a person in general.
           </p>
           <div className='flex justify-between gap-4'>
