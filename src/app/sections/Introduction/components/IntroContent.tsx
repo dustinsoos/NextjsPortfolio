@@ -12,7 +12,7 @@ export default function IntroText() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className=' flex flex-col gap-10 md:gap-4 min-h-screen md:flex-row justify-center items-center '
+        className=' flex flex-col gap-10 min-h-screen md:flex-row justify-center items-center '
       >
         <div className='sm:w-full md:w-3/5 flex flex-col gap-4'>
           <h1 className='text-5xl md:text-6xl'>
@@ -32,7 +32,6 @@ export default function IntroText() {
             </Button>
           </div>
         </div>
-        <div></div>
         <div className='hidden w-2/5 md:block '>
           <Image
             src={ProfileImg}

@@ -4,7 +4,7 @@ type ButtonProps = {
   onClick?: () => void;
   className?: string;
   variant: 'custom-black' | 'custom-green';
-  children: React.ReactNode;
+  children?: React.ReactNode;
   href?: string;
 };
 

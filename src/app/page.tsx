@@ -1,3 +1,4 @@
+import IntroQuote from './components/Quote/IntroQuote';
 import Contact from './sections/Contact/Contact';
 import Experience from './sections/Experience/Experience';
 import Introduction from './sections/Introduction/Introduction';
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <main>
       <Introduction />
+      <IntroQuote />
       <Experience />
       <MyProjects />
       <TechSkills />
