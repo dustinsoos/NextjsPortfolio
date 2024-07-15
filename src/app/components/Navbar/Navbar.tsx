@@ -44,7 +44,7 @@ export default function Navbar() {
       >
         <button
           onClick={() => setIsOpen(false)}
-          className='absolute top-4 right-4 text-4xl text-green-400'
+          className='absolute top-4 right-4 text-4xl text-green-400 hover:text-gray-300'
           aria-label='Close menu'
         >
           &times;
