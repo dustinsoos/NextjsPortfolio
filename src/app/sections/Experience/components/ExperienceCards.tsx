@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { experience } from '../../../../../data/experience';
-import '../styles/experienceStyles.css';
+import '../../../styles/experienceStyles.css';
 
 const variants = {
   hidden: { opacity: 0 },

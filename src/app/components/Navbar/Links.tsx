@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 export default function Links() {
   return (
     <div className='p-8 flex flex-col gap-4 items-center justify-center '>
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      ></motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
           href='#Introduction'
@@ -30,12 +34,12 @@ export default function Links() {
         </Link>
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-        <a
+        <Link
           href='#TechSkills'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
           Tech Skills
-        </a>
+        </Link>
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link

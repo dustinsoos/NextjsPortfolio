@@ -7,3 +7,8 @@
 .icon:hover {
   opacity: 0.8;
 }
+
+.tech-icon {
+  width: 36px;
+  height: 36px;
+}

@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 interface TechSkillsListProps {
   sections: {
     header: string;
-    items: string[];
+    items: (string | React.ReactNode)[];
   }[];
 }
 
@@ -32,7 +32,7 @@ export default function TechSkillsList({ sections }: TechSkillsListProps) {
     <>
       {sections.map((section, index) => (
         <motion.div
-          className='flex flex-col gap-4'
+          className='flex flex-col gap-4 shadow-md shadow-green-400/40 p-4'
           key={index}
           ref={ref}
           initial='hidden'
@@ -40,18 +40,11 @@ export default function TechSkillsList({ sections }: TechSkillsListProps) {
           variants={listItemVariants}
         >
           <h3 className='uppercase'>{section.header}</h3>
-          <div>
-            <ul className='flex flex-wrap gap-2 text-gray-300'>
-              {section.items.map((item, itemIndex) => (
-                <li key={itemIndex}>
-                  {item}
-                  {itemIndex < section.items.length - 1 && (
-                    <span className='mx-1'>|</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className='flex flex-wrap gap-2 text-gray-300'>
+            {section.items.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
         </motion.div>
       ))}
     </>
