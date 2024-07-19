@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   href,
 }) => {
   const baseClasses =
-    'px-12 py-2 focus:outline-none focus:shadow-outline transition-colors duration-500 transition: all 0.3s ease;';
+    'px-24 py-2 focus:outline-none focus:shadow-outline transition-colors duration-500 transition: all 0.3s ease;';
   let variantClasses = '';
 
   switch (variant) {

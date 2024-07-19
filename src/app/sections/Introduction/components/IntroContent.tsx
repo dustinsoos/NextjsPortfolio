@@ -1,8 +1,12 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { SiGithub, SiLinkedin } from '@icons-pack/react-simple-icons';
+
 import ProfileImg from '../../../../../public/images/profileimg.jpg';
+import '../../../styles/iconStyles.css';
 import Button from '@/app/components/Button';
 
 export default function IntroText() {
@@ -18,18 +22,21 @@ export default function IntroText() {
           <h1 className='text-5xl md:text-6xl'>
             Yo, I&#39;m <span className=' text-green-400'>Dustin.</span>
           </h1>
-          <p className='text-lg'>
+          <p className='text-xl'>
             A Frontend Engineer putting all my time and efforts into becoming
             the best programmer I can be. I&#39;m always wanting to learn and
             improve, not only related to coding but as a person in general.
           </p>
-          <div className='flex justify-between gap-4'>
-            <Button className='w-full font-medium' variant='custom-black'>
-              GitHub
-            </Button>
-            <Button className='w-full font-medium' variant='custom-green'>
-              LinkedIn
-            </Button>
+          <div className='flex gap-4'>
+            <Link
+              href='https://www.linkedin.com/in/dustinsoos/'
+              target='_blank'
+            >
+              <SiLinkedin className='icon' />
+            </Link>
+            <Link href='https://github.com/dustinsoos' target='_blank'>
+              <SiGithub className='icon' />
+            </Link>
           </div>
         </div>
         <div className='hidden w-2/5 md:block '>

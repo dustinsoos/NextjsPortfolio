@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { experienceData } from '../experienceData';
+import { experience } from '../../../../../data/experience';
 import '../styles/experienceStyles.css';
 
 const variants = {
@@ -31,9 +31,9 @@ export default function ExperienceCards() {
       ref={ref}
     >
       <div className='flex flex-col gap-20'>
-        {experienceData.map((experience) => (
+        {experience.map((exp) => (
           <motion.div
-            key={experience.title}
+            key={exp.title}
             className='flex flex-col'
             variants={{
               hidden: { opacity: 0, x: -100 },
@@ -42,19 +42,19 @@ export default function ExperienceCards() {
           >
             <div className='pb-4'>
               <h3 className='text-2xl text-green-400'>
-                {experience.company} - {experience.title}
+                {exp.company} - {exp.title}
               </h3>
               <h3 className='text-xl'></h3>
               <ul className='flex gap-2 flex-wrap'>
-                {experience.technologies.map((tech) => (
+                {exp.technologies.map((tech) => (
                   <li key={tech}>{tech} |</li>
                 ))}
               </ul>
-              <p>{experience.date}</p>
+              <p>{exp.date}</p>
             </div>
 
             <ul className='list-disc list-inside pt-4 pb-8 custom-bullet pl-6 flex flex-col gap-4'>
-              {experience.description.map((desc, index) => (
+              {exp.description.map((desc, index) => (
                 <li key={index}>{desc}</li>
               ))}
             </ul>

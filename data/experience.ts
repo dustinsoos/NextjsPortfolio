@@ -1,4 +1,4 @@
-export const experienceData = [
+export const experience = [
   {
     title: 'Frontend Engineer',
     company: 'Drund',
