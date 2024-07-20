@@ -173,7 +173,7 @@ export default function TechSkillsList() {
             {section.items.map((item, itemIndex) => (
               <Tooltip
                 key={itemIndex}
-                className='text-xs font-medium bg-custom-black text-green-400 px-4 py-1 shadow-lg shadow-gray-300/40 rounded-md'
+                className='text-md font-medium bg-custom-black text-green-400 px-4 py-1 shadow-lg shadow-gray-300/45 rounded-md'
                 label={item.name}
               >
                 <li>{item.icon}</li>

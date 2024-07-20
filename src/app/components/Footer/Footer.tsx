@@ -48,7 +48,9 @@ export default function Footer() {
           </Link>
         </motion.div>
       </div>
-      <p className='text-gray-300 text-sm'>&copy; Dustin Soos</p>
+      <p className='text-gray-300 text-sm'>
+        &copy; Dustin Soos {new Date().getFullYear()}
+      </p>
     </div>
   );
 }
