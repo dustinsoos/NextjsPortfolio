@@ -1,8 +1,14 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Links() {
+  //quick fix for scroll restoration
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='p-8 flex flex-col gap-4 items-center justify-center '>
       <motion.div

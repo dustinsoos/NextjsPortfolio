@@ -172,7 +172,7 @@ export default function TechSkillsList() {
           <ul className='flex flex-wrap gap-2 text-gray-300'>
             {section.items.map((item, itemIndex) => (
               <Tooltip
-                className='text-xs font-bold bg-custom-black text-green-400 px-4 py-1 shadow-lg shadow-gray-300/40 rounded-md'
+                className='text-xs font-medium bg-custom-black text-green-400 px-4 py-1 shadow-lg shadow-gray-300/40 rounded-md'
                 label={item.name}
               >
                 <li key={itemIndex}>{item.icon}</li>
