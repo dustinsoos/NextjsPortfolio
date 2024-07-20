@@ -2,33 +2,6 @@
 
 import React from 'react';
 import TechSkillsList from './components/TechSkillsList';
-import {
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTypescript,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiBootstrap,
-  SiJquery,
-  SiMysql,
-  SiVercel,
-  SiGit,
-  SiNodedotjs,
-  SiPython,
-  SiNpm,
-  SiJira,
-  SiConfluence,
-  SiFigma,
-  SiExpress,
-  SiEjs,
-  SiPostgresql,
-  SiMui,
-  SiChakraui,
-  SiPostman,
-  SiGithub,
-} from '@icons-pack/react-simple-icons';
 
 import '../../styles/iconStyles.css';
 
