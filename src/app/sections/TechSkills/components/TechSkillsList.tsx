@@ -28,6 +28,9 @@ import {
   SiChakraui,
   SiPostman,
   SiGithub,
+  SiReacthookform,
+  SiSass,
+  SiCssmodules,
 } from '@icons-pack/react-simple-icons';
 
 export default function TechSkillsList() {
@@ -39,16 +42,16 @@ export default function TechSkillsList() {
       header: 'Frontend',
       items: [
         {
-          name: 'JavaScript',
-          icon: <SiJavascript color='#F7DF1E' className='tech-icon' />,
-        },
-        {
           name: 'HTML5',
           icon: <SiHtml5 color='#E34F26' className='tech-icon' />,
         },
         {
           name: 'CSS3',
           icon: <SiCss3 color='#1572B6' className='tech-icon' />,
+        },
+        {
+          name: 'JavaScript',
+          icon: <SiJavascript color='#F7DF1E' className='tech-icon' />,
         },
         {
           name: 'TypeScript',
@@ -59,12 +62,24 @@ export default function TechSkillsList() {
           icon: <SiReact color='#61DAFB' className='tech-icon' />,
         },
         {
+          name: 'React-Hook-Form',
+          icon: <SiReacthookform color='#EC5990' className='tech-icon' />,
+        },
+        {
           name: 'Redux',
           icon: <SiRedux color='#764ABC' className='tech-icon' />,
         },
         {
-          name: 'Tailwind CSS',
+          name: 'TailwindCSS',
           icon: <SiTailwindcss color='#06B6D4' className='tech-icon' />,
+        },
+        {
+          name: 'Sass',
+          icon: <SiSass color='#CC6699' className='tech-icon' />,
+        },
+        {
+          name: 'Css-Modules',
+          icon: <SiCssmodules color='#000000' className='tech-icon bg-white' />,
         },
         {
           name: 'Bootstrap',
