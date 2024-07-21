@@ -1,13 +1,11 @@
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import useRemoveUrlHash from '../../hooks/useRemoveUrlHash';
+import smoothScroll from '@/app/hooks/smoothScroll';
 
 export default function Links() {
-  //quick fix for scroll restoration
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
-  }, []);
+  useRemoveUrlHash();
 
   return (
     <div className='p-8 flex flex-col gap-4 items-center justify-center '>
@@ -17,6 +15,7 @@ export default function Links() {
       ></motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
+          onClick={(e) => smoothScroll(e, '#Introduction')}
           href='#Introduction'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
@@ -25,6 +24,7 @@ export default function Links() {
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
+          onClick={(e) => smoothScroll(e, '#Experience')}
           href='#Experience'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
@@ -33,6 +33,7 @@ export default function Links() {
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
+          onClick={(e) => smoothScroll(e, '#MyProjects')}
           href='#MyProjects'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
@@ -41,6 +42,7 @@ export default function Links() {
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
+          onClick={(e) => smoothScroll(e, '#TechSkills')}
           href='#TechSkills'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
@@ -49,6 +51,7 @@ export default function Links() {
       </motion.div>
       <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <Link
+          onClick={(e) => smoothScroll(e, '#Contact')}
           href='#Contact'
           className='text-gray-300 uppercase font-medium hover:text-green-400  hover:border-b-2 hover:border-green-400  pb-1'
         >
