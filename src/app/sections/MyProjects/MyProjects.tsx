@@ -48,8 +48,7 @@ export default function MyProjects() {
               <h4>React | Tailwind CSS | NextJS </h4>
               <p>
                 Frontend Assets was created to help developers find the perfect
-                resources for their projects. It's a place where you can find
-                all the assets you need for your frontend projects.
+                resources for their projects.
               </p>
             </div>
           </div>
