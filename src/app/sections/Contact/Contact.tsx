@@ -6,7 +6,7 @@ export default function Contact() {
     <>
       <section
         id='Contact'
-        className='flex flex-col justify-center items-center md:justify-start md:items-start min-h-screen'
+        className='flex flex-col justify-center md:justify-start md:items-start min-h-screen pb-40'
       >
         <h2 className='pb-24'>Contact Me</h2>
         <ContactForm />

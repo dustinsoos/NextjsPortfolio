@@ -45,34 +45,34 @@ export default function ContactForm() {
       initial='hidden'
       animate={controls}
       variants={contactVariants}
-      className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-slate-800 p-4 rounded-xl'
+      className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-custom-black p-4 rounded-xl shadow-lg shadow-green-400/40'
     >
-      <h4 className=' text-3xl font-medium text-green-400 pb-6'>
+      <h4 className=' text-3xl font-medium text-gray-300 pb-6'>
         Send A Message:
       </h4>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-2'>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
         <div className='flex'>
           <input
             {...register('firstName', { required: true })}
             type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black focus:outline-green-400 mr-2'
+            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 mr-2'
             placeholder='First Name'
           />
           <input
             {...register('lastName', { required: true })}
             type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black focus:outline-green-400'
+            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
             placeholder='Last Name'
           />
         </div>
         <input
           {...register('email', { required: true })}
           type='text'
-          className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black focus:outline-green-400'
+          className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
           placeholder='Email'
         />
         <textarea
-          className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black focus:outline-green-400'
+          className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
           placeholder='Message'
         />
       </form>

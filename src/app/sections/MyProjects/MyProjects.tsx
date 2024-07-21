@@ -13,7 +13,7 @@ export default function MyProjects() {
     <>
       <section
         id='MyProjects'
-        className='flex flex-col justify-center items-center md:justify-start md:items-start min-h-screen'
+        className='flex flex-col justify-center md:justify-start md:items-start min-h-screen pb-40'
       >
         <h2>Projects</h2>
         <div className='flex flex-col md:flex-row gap-8 '>
