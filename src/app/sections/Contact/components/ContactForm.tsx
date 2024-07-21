@@ -45,7 +45,7 @@ export default function ContactForm() {
       initial='hidden'
       animate={controls}
       variants={contactVariants}
-      className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-custom-black p-4 rounded-xl shadow-lg shadow-green-400/40'
+      className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-custom-black p-4 rounded-xl shadow-lg shadow-green-400/60'
     >
       <h4 className=' text-3xl font-medium text-gray-300 pb-6'>
         Send A Message:
