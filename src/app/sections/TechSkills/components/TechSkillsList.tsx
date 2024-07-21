@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Tooltip } from '@chakra-ui/react';
@@ -162,7 +162,7 @@ export default function TechSkillsList() {
     },
   ];
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
@@ -173,7 +173,7 @@ export default function TechSkillsList() {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 2 },
+      transition: { duration: 1.5 },
     },
   };
 

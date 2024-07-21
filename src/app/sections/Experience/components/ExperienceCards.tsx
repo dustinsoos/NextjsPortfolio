@@ -13,7 +13,7 @@ const variants = {
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.2,
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
