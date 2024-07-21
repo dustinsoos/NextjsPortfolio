@@ -29,8 +29,9 @@ export default function MyProjects() {
               <h3>My Portfolio</h3>
               <h4>React | Tailwind CSS | NextJS | Framer-Motion</h4>
               <p>
-                Just a spot you can check me out where you have my full
-                permission
+                My Portfolio was created to showcase my work and projects. It's
+                a place where you can find all the information about me and my
+                work.
               </p>
             </div>
           </div>
@@ -46,8 +47,9 @@ export default function MyProjects() {
               <h3>Frontend Assets</h3>
               <h4>React | Tailwind CSS | NextJS </h4>
               <p>
-                Just a spot you can check me out where you have my full
-                permission
+                Frontend Assets was created to help developers find the perfect
+                resources for their projects. It's a place where you can find
+                all the assets you need for your frontend projects.
               </p>
             </div>
           </div>
