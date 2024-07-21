@@ -31,6 +31,7 @@ import {
   SiReacthookform,
   SiSass,
   SiCssmodules,
+  SiDocker,
 } from '@icons-pack/react-simple-icons';
 
 export default function TechSkillsList() {
@@ -138,16 +139,20 @@ export default function TechSkillsList() {
         { name: 'Git', icon: <SiGit color='#F05032' className='tech-icon' /> },
         { name: 'NPM', icon: <SiNpm color='#CB3837' className='tech-icon' /> },
         {
+          name: 'Docker',
+          icon: <SiDocker color='#2496ED' className='tech-icon' />,
+        },
+        {
           name: 'Vercel',
           icon: <SiVercel color='#000000' className='tech-icon bg-white' />,
         },
         {
-          name: 'Figma',
-          icon: <SiFigma color='#F24E1E' className='tech-icon' />,
-        },
-        {
           name: 'Jira',
           icon: <SiJira color='#0052CC' className='tech-icon' />,
+        },
+        {
+          name: 'Figma',
+          icon: <SiFigma color='#F24E1E' className='tech-icon' />,
         },
         {
           name: 'Confluence',
