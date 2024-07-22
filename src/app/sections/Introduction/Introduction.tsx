@@ -10,11 +10,12 @@ import '../../styles/iconStyles.css';
 
 export default function Introduction() {
   return (
-    <section id='Introduction'>
+    <>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
+        id='Introduction'
         className=' flex flex-col gap-10 min-h-screen md:flex-row justify-center items-center '
       >
         <div className='sm:w-full md:w-3/5 flex flex-col gap-4'>
@@ -47,6 +48,6 @@ export default function Introduction() {
         </div>
       </motion.div>
       <hr className='border-t-2 border-green-400 w-full mt-4' />
-    </section>
+    </>
   );
 }
