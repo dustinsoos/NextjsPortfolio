@@ -10,7 +10,7 @@ import '../../styles/iconStyles.css';
 
 export default function Introduction() {
   return (
-    <>
+    <section id='Introduction'>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -47,6 +47,6 @@ export default function Introduction() {
         </div>
       </motion.div>
       <hr className='border-t-2 border-green-400 w-full mt-4' />
-    </>
+    </section>
   );
 }
