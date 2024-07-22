@@ -4,11 +4,6 @@ import Portfolio from '../../../../public/images/portfolio.png';
 import faAssets from '../../../../public/images/fa_assets.png';
 
 export default function MyProjects() {
-  const data = [
-    {
-      title: 'My Portfolio',
-    },
-  ];
   return (
     <>
       <section
@@ -29,9 +24,9 @@ export default function MyProjects() {
               <h3>My Portfolio</h3>
               <h4>React | Tailwind CSS | NextJS | Framer-Motion</h4>
               <p>
-                My Portfolio was created to showcase my work and projects. It's
-                a place where you can find all the information about me and my
-                work.
+                My Portfolio was created to showcase my work and projects.
+                It&#39;s a place where you can find all the information about me
+                and my work.
               </p>
             </div>
           </div>
