@@ -61,25 +61,25 @@ export default function ContactForm() {
           <input
             {...register('firstName', { required: true })}
             type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 mr-2'
+            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 mr-2 outline-none'
             placeholder='First Name'
           />
           <input
             {...register('lastName', { required: true })}
             type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
+            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
             placeholder='Last Name'
           />
         </div>
         <input
           {...register('email', { required: true })}
           type='text'
-          className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
+          className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
           placeholder='Email'
         />
         <textarea
           {...register('message')}
-          className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
+          className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
           placeholder='Message'
         />
         <button
