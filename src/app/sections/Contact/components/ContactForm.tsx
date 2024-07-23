@@ -5,6 +5,8 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { sendEmail } from '@/app/apis/sendEmail';
+import sendIcon from '../../../../../public/images/send-icon.svg';
+import Image from 'next/image';
 
 type Inputs = {
   firstName: string;
@@ -46,8 +48,8 @@ export default function ContactForm() {
       variants={contactVariants}
       className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-custom-black p-4 rounded-xl shadow-lg shadow-green-400/60'
     >
-      <h4 className=' text-3xl font-medium text-gray-300 pb-6'>
-        Send A Message:
+      <h4 className=' text-3xl font-medium text-green-400 pb-6'>
+        Get in touch:
       </h4>
       <form
         action={async (formData) => {
@@ -82,9 +84,12 @@ export default function ContactForm() {
         />
         <button
           type='submit'
-          className='w-1/2 py-3 mx-auto bg-green-400 text-custom-black rounded-md hover:bg-green-500'
+          className='w-1/2 py-3 mx-auto font-medium bg-green-400 text-custom-black rounded-md hover:bg-green-500 flex items-center justify-center gap-2'
         >
-          Send Message
+          Send Message{' '}
+          <span>
+            {<Image src={sendIcon} width={24} height={24} alt='send icon' />}
+          </span>
         </button>
       </form>
     </motion.div>
