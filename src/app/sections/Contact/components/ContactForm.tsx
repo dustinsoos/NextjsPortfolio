@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { sendEmail } from '@/app/apis/sendEmail';
 
 type Inputs = {
   firstName: string;
@@ -19,8 +20,6 @@ export default function ContactForm() {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   const controls = useAnimation();
   const { ref, inView } = useInView();
@@ -50,7 +49,12 @@ export default function ContactForm() {
       <h4 className=' text-3xl font-medium text-gray-300 pb-6'>
         Send A Message:
       </h4>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
+      <form
+        action={async (formData) => {
+          await sendEmail(formData);
+        }}
+        className='flex flex-col gap-3'
+      >
         <div className='flex'>
           <input
             {...register('firstName', { required: true })}
@@ -72,9 +76,16 @@ export default function ContactForm() {
           placeholder='Email'
         />
         <textarea
+          {...register('message')}
           className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400'
           placeholder='Message'
         />
+        <button
+          type='submit'
+          className='w-1/2 py-3 mx-auto bg-green-400 text-custom-black rounded-md hover:bg-green-500'
+        >
+          Send Message
+        </button>
       </form>
     </motion.div>
   );
