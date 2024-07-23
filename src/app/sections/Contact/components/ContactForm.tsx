@@ -20,7 +20,6 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
