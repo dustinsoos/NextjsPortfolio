@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { sendEmail } from '@/app/apis/sendEmail';
 import sendIcon from '../../../../../public/images/send-icon.svg';
@@ -19,12 +19,14 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm<Inputs>();
 
   const controls = useAnimation();
   const { ref, inView } = useInView();
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     if (inView) {
@@ -40,6 +42,17 @@ export default function ContactForm() {
       transition: { duration: 1.5 },
     },
   };
+
+  const handleFormSubmit = async (formData: Inputs, resetForm: () => void) => {
+    const convertedFormData = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      convertedFormData.append(key, value as string);
+    });
+    await sendEmail(convertedFormData);
+    resetForm();
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000);
+  };
   return (
     <motion.div
       ref={ref}
@@ -52,39 +65,73 @@ export default function ContactForm() {
         Get in touch:
       </h4>
       <form
-        action={async (formData) => {
-          await sendEmail(formData);
-        }}
+        onSubmit={handleSubmit((formData) => handleFormSubmit(formData, reset))}
         className='flex flex-col gap-3'
       >
-        <div className='flex'>
-          <input
-            {...register('firstName', { required: true })}
-            type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 mr-2 outline-none'
-            placeholder='First Name'
-          />
-          <input
-            {...register('lastName', { required: true })}
-            type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
-            placeholder='Last Name'
-          />
+        <div className='flex gap-2'>
+          <div className='w-1/2'>
+            <input
+              {...register('firstName', {
+                required: 'First Name Required',
+              })}
+              type='text'
+              className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 mr-2 outline-none'
+              placeholder='First Name'
+            />
+            {errors.firstName && (
+              <p className='text-red-500 text-sm italic pt-1'>
+                <span className='font-bold'>*</span> {errors.firstName.message}
+              </p>
+            )}
+          </div>
+          <div className='w-1/2'>
+            <input
+              {...register('lastName', { required: 'Last Name Required' })}
+              type='text'
+              className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
+              placeholder='Last Name'
+            />
+            {errors.lastName && (
+              <p className='text-red-500 text-sm italic pt-1'>
+                <span className='font-bold'>*</span> {errors.lastName.message}
+              </p>
+            )}
+          </div>
         </div>
-        <input
-          {...register('email', { required: true })}
-          type='text'
-          className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
-          placeholder='Email'
-        />
-        <textarea
-          {...register('message')}
-          className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:outline-green-400 outline-none'
-          placeholder='Message'
-        />
+        <div>
+          <input
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: 'Please enter a valid email address',
+              },
+            })}
+            type='text'
+            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
+            placeholder='Email'
+          />
+          {errors.email && (
+            <p className='text-red-500 text-sm italic pt-1'>
+              <span className='font-bold'>*</span> {errors.email.message}
+            </p>
+          )}
+        </div>
+        <div>
+          <textarea
+            {...register('message', { required: 'Message is required' })}
+            className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
+            placeholder='Message'
+          />
+          {errors.message && (
+            <p className='text-red-500 text-sm italic'>
+              <span className='font-bold'>*</span> {errors.message.message}
+            </p>
+          )}
+        </div>
         <button
           type='submit'
-          className='w-1/2 py-3 mx-auto font-medium bg-green-400 text-custom-black rounded-md hover:bg-green-500 flex items-center justify-center gap-2'
+          className='w-1/2 md:w-1/3 py-3 mx-auto font-medium bg-green-400 text-custom-black rounded-md hover:bg-green-500 flex items-center justify-center gap-2'
         >
           Send Message{' '}
           <span>
@@ -92,6 +139,19 @@ export default function ContactForm() {
           </span>
         </button>
       </form>
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+            className='text-md font-medium py-3 px-2 text-green-400 shadow-lg shadow-gray-300/45 rounded-md mx-auto text-center'
+          >
+            Thanks for your message, I will get back to you shortly.
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
