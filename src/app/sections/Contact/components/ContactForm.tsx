@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { sendEmail } from '@/app/apis/sendEmail';
-import sendIcon from '../../../../../public/images/send-icon.svg';
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { sendEmail } from "@/app/apis/sendEmail";
+import sendIcon from "../../../../../public/images/send-icon.svg";
+import Image from "next/image";
 
 type Inputs = {
   firstName: string;
@@ -29,7 +29,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -55,86 +55,86 @@ export default function ContactForm() {
   return (
     <motion.div
       ref={ref}
-      initial='hidden'
+      initial="hidden"
       animate={controls}
       variants={contactVariants}
-      className='flex flex-col w-11/12  md:w-3/4 mx-auto md:mx-0 bg-custom-black p-4 rounded-xl shadow-lg shadow-green-400/60'
+      className="mx-auto flex w-11/12 flex-col rounded-xl bg-custom-black p-4 shadow-lg shadow-green-400/60 md:mx-0 md:w-3/4"
     >
-      <h4 className=' text-3xl font-medium text-green-400 pb-6'>
+      <h4 className="pb-6 text-3xl font-medium text-green-400">
         Get in touch:
       </h4>
       <form
         onSubmit={handleSubmit((formData) => handleFormSubmit(formData, reset))}
-        className='flex flex-col gap-3'
+        className="flex flex-col gap-3"
       >
-        <div className='flex gap-2'>
-          <div className='w-1/2'>
+        <div className="flex gap-2">
+          <div className="w-1/2">
             <input
-              {...register('firstName', {
-                required: 'First Name Required',
+              {...register("firstName", {
+                required: "First Name Required",
               })}
-              type='text'
-              className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 mr-2 outline-none'
-              placeholder='First Name'
+              type="text"
+              className="mr-2 w-full rounded-md border-2 border-gray-300 bg-custom-black py-3 pl-2 pr-10 text-gray-300 outline-none focus:border-green-400"
+              placeholder="First Name"
             />
             {errors.firstName && (
-              <p className='text-red-500 text-sm italic pt-1'>
-                <span className='font-bold'>*</span> {errors.firstName.message}
+              <p className="pt-1 text-sm italic text-red-500">
+                <span className="font-bold">*</span> {errors.firstName.message}
               </p>
             )}
           </div>
-          <div className='w-1/2'>
+          <div className="w-1/2">
             <input
-              {...register('lastName', { required: 'Last Name Required' })}
-              type='text'
-              className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
-              placeholder='Last Name'
+              {...register("lastName", { required: "Last Name Required" })}
+              type="text"
+              className="w-full rounded-md border-2 border-gray-300 bg-custom-black py-3 pl-2 pr-10 text-gray-300 outline-none focus:border-green-400"
+              placeholder="Last Name"
             />
             {errors.lastName && (
-              <p className='text-red-500 text-sm italic pt-1'>
-                <span className='font-bold'>*</span> {errors.lastName.message}
+              <p className="pt-1 text-sm italic text-red-500">
+                <span className="font-bold">*</span> {errors.lastName.message}
               </p>
             )}
           </div>
         </div>
         <div>
           <input
-            {...register('email', {
-              required: 'Email is required',
+            {...register("email", {
+              required: "Email is required",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Please enter a valid email address',
+                message: "Please enter a valid email address",
               },
             })}
-            type='text'
-            className='w-full py-3 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
-            placeholder='Email'
+            type="text"
+            className="w-full rounded-md border-2 border-gray-300 bg-custom-black py-3 pl-2 pr-10 text-gray-300 outline-none focus:border-green-400"
+            placeholder="Email"
           />
           {errors.email && (
-            <p className='text-red-500 text-sm italic pt-1'>
-              <span className='font-bold'>*</span> {errors.email.message}
+            <p className="pt-1 text-sm italic text-red-500">
+              <span className="font-bold">*</span> {errors.email.message}
             </p>
           )}
         </div>
         <div>
           <textarea
-            {...register('message', { required: 'Message is required' })}
-            className='w-full pb-20 pl-2 pr-10 rounded-md text-gray-300 bg-custom-black border-2 border-gray-300 focus:border-green-400 outline-none'
-            placeholder='Message'
+            {...register("message", { required: "Message is required" })}
+            className="w-full rounded-md border-2 border-gray-300 bg-custom-black pb-20 pl-2 pr-10 text-gray-300 outline-none focus:border-green-400"
+            placeholder="Message"
           />
           {errors.message && (
-            <p className='text-red-500 text-sm italic'>
-              <span className='font-bold'>*</span> {errors.message.message}
+            <p className="text-sm italic text-red-500">
+              <span className="font-bold">*</span> {errors.message.message}
             </p>
           )}
         </div>
         <button
-          type='submit'
-          className='w-1/2 md:w-1/3 py-3 mx-auto font-medium bg-green-400 text-custom-black rounded-md hover:bg-green-500 flex items-center justify-center gap-2'
+          type="submit"
+          className="mx-auto flex w-1/2 items-center justify-center gap-2 rounded-md bg-green-400 py-3 font-medium text-custom-black hover:bg-green-500 md:w-1/3"
         >
-          Send Message{' '}
+          Send Message{" "}
           <span>
-            {<Image src={sendIcon} width={24} height={24} alt='send icon' />}
+            {<Image src={sendIcon} width={24} height={24} alt="send icon" />}
           </span>
         </button>
       </form>
@@ -145,7 +145,7 @@ export default function ContactForm() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2 }}
-            className='text-md font-medium py-3 px-2 text-green-400 shadow-lg shadow-gray-300/45 rounded-md mx-auto text-center'
+            className="text-md mx-auto rounded-md px-2 py-3 text-center font-medium text-green-400 shadow-lg shadow-gray-300/45"
           >
             Thanks for your message, I will get back to you shortly.
           </motion.div>

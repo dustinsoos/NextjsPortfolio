@@ -4,7 +4,7 @@
 }
 
 .custom-bullet li::before {
-  content: '•';
+  content: "•";
   color: #68d391;
   position: absolute;
   left: -1em;

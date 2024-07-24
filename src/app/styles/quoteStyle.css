@@ -1,8 +1,8 @@
 .quote-container .quote::before {
-  content: '“'; /* Big quote mark */
+  content: "“"; /* Big quote mark */
   font-size: 4rem; /* Adjust size as needed */
   vertical-align: -0.4em;
   color: #4ade80;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   margin-right: 0.4rem;
 }
