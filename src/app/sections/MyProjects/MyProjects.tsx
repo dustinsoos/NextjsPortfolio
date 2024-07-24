@@ -36,7 +36,7 @@ export default function MyProjects() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={controls}
           transition={{ duration: 1.5 }}
-          className="flex w-full flex-col justify-evenly md:flex-row"
+          className="flex w-full flex-col justify-evenly gap-4 md:flex-row"
         >
           <Card className="mx-auto flex w-full max-w-lg flex-col gap-4 rounded-lg shadow-lg shadow-green-400/30 md:mx-0 md:w-1/2">
             <CardBody>
