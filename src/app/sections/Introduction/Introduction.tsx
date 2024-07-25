@@ -16,7 +16,7 @@ export default function Introduction() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         id="Introduction"
-        className="flex min-h-screen flex-col items-center justify-center gap-10 md:flex-row"
+        className="p-custom-padding flex flex-col items-center justify-center gap-10 md:flex-row"
       >
         <div className="flex flex-col gap-4 sm:w-full md:w-3/5">
           <h1 className="text-5xl md:text-6xl">

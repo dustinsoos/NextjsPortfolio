@@ -5,7 +5,7 @@ export default function Experience() {
   return (
     <section
       id="Experience"
-      className="flex min-h-screen flex-col justify-center md:items-start md:justify-start"
+      className="p-custom-padding flex flex-col justify-center md:items-start md:justify-start"
     >
       <h2>Experience</h2>
       <ExperienceCards />
