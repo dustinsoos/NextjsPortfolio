@@ -130,7 +130,7 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="mx-auto flex w-3/4 items-center justify-center gap-2 rounded-md bg-green-400 py-3 font-medium text-custom-black hover:bg-green-500 md:w-1/2 md:w-1/3"
+          className="mx-auto flex w-3/4 items-center justify-center gap-2 rounded-md bg-green-400 py-3 font-medium text-custom-black hover:bg-green-500 md:w-1/2 lg:w-1/3"
         >
           Send Message{" "}
           <span>
