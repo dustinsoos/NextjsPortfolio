@@ -20,6 +20,10 @@ select:-webkit-autofill:focus {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h2 {
   color: #4ade80;
   font-weight: bold;
