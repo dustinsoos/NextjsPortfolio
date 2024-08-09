@@ -15,14 +15,6 @@ export default function Home() {
       <MyProjects />
       <TechSkills />
       <Contact />
-      <Box
-        position="fixed"
-        bottom="20"
-        right="20"
-        className="rounded-lg bg-green-400 p-4 font-bold text-black"
-      >
-        In Development
-      </Box>
     </main>
   );
 }
