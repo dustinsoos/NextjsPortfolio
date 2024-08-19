@@ -16,12 +16,14 @@ export default function IntroQuote() {
 
   const getQuote = async () => {
     const quotes = await fetchQuotes();
-    console.log(quotes);
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    setQuote(randomQuote.text);
-    // Check if the author's name contains ", type.fit" and remove it
-    const cleanedAuthor = randomQuote.author.replace(", type.fit", "");
-    setAuthor(cleanedAuthor);
+    if (quotes.length > 0) {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      setQuote(randomQuote.q);
+      setAuthor(randomQuote.a);
+    } else {
+      setQuote("Failed to fetch quote.");
+      setAuthor("");
+    }
   };
 
   useEffect(() => {
