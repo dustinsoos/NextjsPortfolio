@@ -51,7 +51,7 @@ export default function IntroQuote() {
           animate={inView ? "show" : "hidden"}
           variants={variants}
         >
-          <h2 className="pb-0 text-2xl md:text-4xl">Inspiration Quote Api</h2>
+          <h2 className="pb-0 text-2xl md:text-4xl">Zen Quotes Api</h2>
           {isLoading ? (
             <Spinner size="xl" color="#4ade80" />
           ) : (
