@@ -6,10 +6,12 @@ import "@/app/styles/quoteStyle.css";
 import Button from "@/app/components/Button";
 import { motion } from "framer-motion"; // Import Framer Motion
 import { useInView } from "react-intersection-observer"; // Import useInView hook
+import { Spinner } from "@chakra-ui/react";
 
 export default function IntroQuote() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const [ref, inView] = useInView({
     triggerOnce: true, // Trigger animation only once
   });
@@ -27,7 +29,11 @@ export default function IntroQuote() {
   };
 
   useEffect(() => {
-    getQuote();
+    const fetchInitialQuote = async () => {
+      await getQuote();
+      setIsLoading(false);
+    };
+    fetchInitialQuote();
   }, []);
 
   // Animation variants
@@ -46,8 +52,14 @@ export default function IntroQuote() {
           variants={variants}
         >
           <h2 className="pb-0 text-2xl md:text-4xl">Inspiration Quote Api</h2>
-          <p className="quote text-lg md:text-2xl">{quote}</p>
-          <p className="italic">- {author}</p>
+          {isLoading ? (
+            <Spinner size="xl" color="#4ade80" />
+          ) : (
+            <>
+              <p className="quote text-lg md:text-2xl">{quote}</p>
+              <p className="italic">- {author}</p>
+            </>
+          )}
           <Button onClick={getQuote} variant="custom-black">
             New Quote
           </Button>
