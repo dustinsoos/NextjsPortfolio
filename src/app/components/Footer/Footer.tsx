@@ -8,7 +8,7 @@ export default function Footer() {
   useRemoveUrlHash();
 
   return (
-    <div className="flex flex-wrap items-start justify-between p-8 pt-32 md:items-center">
+    <footer className="flex flex-wrap items-start justify-between p-8 pt-32 md:items-center">
       <div className="flex flex-col gap-4 md:flex md:flex-row">
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <Link
@@ -54,6 +54,6 @@ export default function Footer() {
       <p className="text-sm text-gray-300">
         &copy; Dustin Soos {new Date().getFullYear()}
       </p>
-    </div>
+    </footer>
   );
 }

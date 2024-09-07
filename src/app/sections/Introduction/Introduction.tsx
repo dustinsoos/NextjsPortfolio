@@ -1,49 +1,23 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { SiGithub, SiLinkedin } from "@icons-pack/react-simple-icons";
 
-import ProfileImg from "../../../../public/images/profileimg.jpg";
-import "../../styles/iconStyles.css";
+import SocialsButtons from "@/app/components/Introduction/SocialsButtons";
+import IntroLeftContainer from "@/app/components/Introduction/IntroLeftContainer";
+import IntroText from "@/app/components/Introduction/IntroText";
+import IntroImage from "@/app/components/Introduction/IntroImage";
+import AnimationContainer from "@/app/components/Introduction/AnimationContainer";
 
 export default function Introduction() {
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        id="Introduction"
-        className="p-custom-padding flex flex-col items-center justify-center gap-10 md:flex-row"
-      >
-        <div className="flex flex-col gap-4 sm:w-full md:w-3/5">
-          <h1 className="text-5xl md:text-6xl">
-            Yo, I&#39;m <span className="text-green-400">Dustin.</span>
-          </h1>
-          <p className="text-xl">
-            A Frontend Engineer putting all my time and efforts into becoming
-            the best programmer I can be. I&#39;m always wanting to learn and
-            improve, not only related to coding but as a person in general.
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="https://www.linkedin.com/in/dustinsoos/"
-              target="_blank"
-            >
-              <SiLinkedin className="icon" />
-            </Link>
-            <Link href="https://github.com/dustinsoos" target="_blank">
-              <SiGithub className="icon" />
-            </Link>
-          </div>
-        </div>
-        <div className="hidden w-2/5 md:block">
-          <Image src={ProfileImg} alt="Profile-Image" className="rounded-2xl" />
-        </div>
-      </motion.div>
+    <section className="pt-0">
+      <AnimationContainer>
+        <IntroLeftContainer>
+          <IntroText />
+          <SocialsButtons />
+        </IntroLeftContainer>
+        <IntroImage />
+      </AnimationContainer>
       <hr className="mt-4 w-full border-t-2 border-green-400" />
-    </>
+    </section>
   );
 }
