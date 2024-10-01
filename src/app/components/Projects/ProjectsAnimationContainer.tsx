@@ -5,8 +5,10 @@ import { useInView } from "react-intersection-observer";
 
 export default function ProjectsAnimationContainer({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className?: string;
 }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true });
@@ -24,7 +26,7 @@ export default function ProjectsAnimationContainer({
       initial={{ opacity: 0, scale: 0.8 }}
       animate={controls}
       transition={{ duration: 1.5 }}
-      className="flex w-full flex-col justify-evenly gap-4 md:flex-row"
+      className={className}
     >
       {children}
     </motion.div>
