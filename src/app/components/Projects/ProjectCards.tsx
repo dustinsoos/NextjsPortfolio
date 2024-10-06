@@ -15,7 +15,7 @@ export default function ProjectCards() {
         description="Full crud application that allows users to create, read, update, and delete lists seperately rather than one single list."
         image="/images/bingelists.png"
         icon="/images/link_icon.svg"
-        websiteLink="https://bingelists.vercel.app/"
+        websiteLink="https://www.bingelists.com/"
         gitHubLink="https://github.com/dustinsoos"
       />
       <ReusableCard
